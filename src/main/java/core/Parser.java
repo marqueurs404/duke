@@ -86,6 +86,8 @@ public class Parser {
                     task = new Deadline(description, ((LocalDate) parsedBy).atStartOfDay(), true);
                 }
 
+                assert task != null : "Task is null";
+
                 return new AddTaskCommand(command, task);
 
             } catch (DateTimeParseException | StringIndexOutOfBoundsException e) {
@@ -143,6 +145,8 @@ public class Parser {
                         task = new Event(description, ((LocalDate) parsedStart).atStartOfDay(), true);
                     }
                 }
+
+                assert task != null : "Task is null";
 
                 return new AddTaskCommand(command, task);
 

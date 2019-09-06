@@ -52,6 +52,8 @@ public class MainWindow extends AnchorPane {
         dialogContainer.getChildren().add(DialogBox.getUserDialog(input, userImage));
         userInput.clear();
 
+        assert userInput.getText().isEmpty(): "User Input should be empty after clearing.";
+
         boolean isExit = duke.consumeUserInput(input);
         if (isExit) {
             exit();
